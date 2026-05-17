@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestia — Gemini</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="navbar__logo">
+      <span class="navbar__logo-text">CELESTIA</span>
+    </a>
+    <nav class="navbar__links">
+      <a href="index.html#zodiac" class="navbar__link">Horoscope</a>
+      <a href="contact.html" class="navbar__link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ── Section 1: 星座介紹（全螢幕） ─────────────────── -->
+  <section class="fortune-hero">
+
+    <header class="fortune-header">
+      <div class="fortune-header__symbol">♊&#xFE0E;</div>
+      <div class="fortune-header__title-row">
+        <span class="fortune-header__star">✦</span>
+        <h1 class="fortune-header__title">GEMINI</h1>
+        <span class="fortune-header__star">✦</span>
+      </div>
+      <p class="fortune-header__dates">May 21 – June 20</p>
+      <div class="fortune-header__divider">
+        <span class="fortune-header__divider-line"></span>
+        <span class="fortune-header__divider-dot"></span>
+        <span class="fortune-header__divider-line"></span>
+      </div>
+    </header>
+
+    <div class="fortune-desc">
+      <p class="fortune-desc__trait">Curious · Witty · Versatile</p>
+      <p class="fortune-desc__text">
+        Quick-minded and endlessly curious, Gemini sees the world from every angle. Their gift for communication and adaptability makes them the life of any gathering.
+      </p>
+      <p class="fortune-desc__planet">☿ Mercury</p>
+    </div>
+
+    <div class="fortune-hero__scroll-hint">
+      <span>today's reading</span>
+      <span class="fortune-hero__scroll-line"></span>
+    </div>
+
+  </section>
+
+  <!-- ── Section 2: 圖表 + 心情小語 ───────────────────── -->
+  <div class="fortune-dashboard-section">
+    <div class="fortune-section-label">Today's Reading</div>
+
+    <div class="fortune-dashboard">
+
+      <!-- 左：matplotlib 圖表 -->
+      <section class="panel panel--chart">
+        <h2 class="panel__label">TODAY'S ENERGY OVERVIEW</h2>
+        <div class="chart-img-wrapper">
+          <img src="gemini.png" alt="Today's energy chart" />
+        </div>
+      </section>
+
+      <!-- 右：心情小語（python 改文字） -->
+      <section class="panel panel--quote">
+        <h2 class="panel__label">TODAY'S MOOD QUOTE</h2>
+        <div class="quote-mark">&ldquo;</div>
+        <p class="quote-text">
+          <!-- 由 Python LLM 自動更新 -->
+        </p>
+        <div class="quote-footer">
+          <div class="quote-mark" style="transform:rotate(180deg);">&rdquo;</div>
+          <div class="quote-divider"></div>
+          <span class="quote-moon">☽</span>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">CELESTIA</span>
+        <p class="footer__tagline">Guided by the stars, grounded in story.</p>
+      </div>
+      <nav class="footer__nav">
+        <h4 class="footer__nav-title">Explore</h4>
+        <a href="index.html#zodiac">All Signs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__rule"></span>
+      <p>© 2026 Celestia · All rights reserved · Made with ✦ and starlight</p>
+      <span class="footer__rule"></span>
+    </div>
+  </footer>
+
+</body>
+</html>

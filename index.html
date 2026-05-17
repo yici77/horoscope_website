@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestia — Your Astrology Guide</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="navbar__logo">
+      <span class="navbar__logo-text">CELESTIA</span>
+    </a>
+    <nav class="navbar__links">
+      <a href="#zodiac" class="navbar__link">Horoscope</a>
+      <a href="contact.html" class="navbar__link">Contact</a>
+    </nav>
+    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <section class="hero">
+    <div class="hero__bg-ornament hero__bg-ornament--tl">✦</div>
+    <div class="hero__bg-ornament hero__bg-ornament--br">✦</div>
+    <div class="hero__border-frame">
+      <div class="hero__border-corner hero__border-corner--tl"></div>
+      <div class="hero__border-corner hero__border-corner--tr"></div>
+      <div class="hero__border-corner hero__border-corner--bl"></div>
+      <div class="hero__border-corner hero__border-corner--br"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Welcome to</p>
+      <h1 class="hero__title">Celestia</h1>
+      <div class="hero__divider">
+        <span class="hero__divider-line"></span>
+        <span class="hero__divider-symbol">☽ ✦ ☾</span>
+        <span class="hero__divider-line"></span>
+      </div>
+      <p class="hero__subtitle">
+        Explore the ancient wisdom of the stars. Discover the traits, elements,
+        and cosmic stories woven into each of the twelve zodiac signs — and
+        uncover what the heavens may hold for you.
+      </p>
+      <a href="#zodiac" class="hero__cta">Explore the Zodiac</a>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>scroll</span>
+      <span class="hero__scroll-line"></span>
+    </div>
+  </section>
+
+  <section class="zodiac" id="zodiac">
+    <div class="section-header">
+      <span class="section-header__rule"></span>
+      <h2 class="section-header__title">The Twelve Signs</h2>
+      <span class="section-header__rule"></span>
+    </div>
+    <p class="section-header__sub">
+      Each sign carries its own mythology, elemental energy, and constellation of traits.<br>
+      Click a sign to read today's fortune.
+    </p>
+
+    <div class="zodiac__grid">
+
+      <a href="aries.html" class="zodiac-card" style="--delay:0.05s">
+        <div class="zodiac-card__element-tag fire">Fire</div>
+        <div class="zodiac-card__symbol">♈&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Aries</h3>
+        <p class="zodiac-card__dates">Mar 21 – Apr 19</p>
+        <p class="zodiac-card__trait">Bold · Ambitious · Pioneering</p>
+        <div class="zodiac-card__planet">♂ Mars</div>
+      </a>
+
+      <a href="taurus.html" class="zodiac-card" style="--delay:0.1s">
+        <div class="zodiac-card__element-tag earth">Earth</div>
+        <div class="zodiac-card__symbol">♉&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Taurus</h3>
+        <p class="zodiac-card__dates">Apr 20 – May 20</p>
+        <p class="zodiac-card__trait">Steadfast · Sensual · Patient</p>
+        <div class="zodiac-card__planet">♀ Venus</div>
+      </a>
+
+      <a href="gemini.html" class="zodiac-card" style="--delay:0.15s">
+        <div class="zodiac-card__element-tag air">Air</div>
+        <div class="zodiac-card__symbol">♊&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Gemini</h3>
+        <p class="zodiac-card__dates">May 21 – Jun 20</p>
+        <p class="zodiac-card__trait">Curious · Witty · Versatile</p>
+        <div class="zodiac-card__planet">☿ Mercury</div>
+      </a>
+
+      <a href="cancer.html" class="zodiac-card" style="--delay:0.2s">
+        <div class="zodiac-card__element-tag water">Water</div>
+        <div class="zodiac-card__symbol">♋&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Cancer</h3>
+        <p class="zodiac-card__dates">Jun 21 – Jul 22</p>
+        <p class="zodiac-card__trait">Intuitive · Nurturing · Loyal</p>
+        <div class="zodiac-card__planet">☽ Moon</div>
+      </a>
+
+      <a href="leo.html" class="zodiac-card" style="--delay:0.25s">
+        <div class="zodiac-card__element-tag fire">Fire</div>
+        <div class="zodiac-card__symbol">♌&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Leo</h3>
+        <p class="zodiac-card__dates">Jul 23 – Aug 22</p>
+        <p class="zodiac-card__trait">Radiant · Generous · Proud</p>
+        <div class="zodiac-card__planet">☉ Sun</div>
+      </a>
+
+      <a href="virgo.html" class="zodiac-card" style="--delay:0.3s">
+        <div class="zodiac-card__element-tag earth">Earth</div>
+        <div class="zodiac-card__symbol">♍&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Virgo</h3>
+        <p class="zodiac-card__dates">Aug 23 – Sep 22</p>
+        <p class="zodiac-card__trait">Precise · Diligent · Discerning</p>
+        <div class="zodiac-card__planet">☿ Mercury</div>
+      </a>
+
+      <a href="libra.html" class="zodiac-card" style="--delay:0.35s">
+        <div class="zodiac-card__element-tag air">Air</div>
+        <div class="zodiac-card__symbol">♎&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Libra</h3>
+        <p class="zodiac-card__dates">Sep 23 – Oct 22</p>
+        <p class="zodiac-card__trait">Graceful · Just · Charming</p>
+        <div class="zodiac-card__planet">♀ Venus</div>
+      </a>
+
+      <a href="scorpio.html" class="zodiac-card" style="--delay:0.4s">
+        <div class="zodiac-card__element-tag water">Water</div>
+        <div class="zodiac-card__symbol">♏&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Scorpio</h3>
+        <p class="zodiac-card__dates">Oct 23 – Nov 21</p>
+        <p class="zodiac-card__trait">Intense · Perceptive · Resilient</p>
+        <div class="zodiac-card__planet">♇ Pluto</div>
+      </a>
+
+      <a href="sagittarius.html" class="zodiac-card" style="--delay:0.45s">
+        <div class="zodiac-card__element-tag fire">Fire</div>
+        <div class="zodiac-card__symbol">♐&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Sagittarius</h3>
+        <p class="zodiac-card__dates">Nov 22 – Dec 21</p>
+        <p class="zodiac-card__trait">Free · Philosophical · Optimistic</p>
+        <div class="zodiac-card__planet">♃ Jupiter</div>
+      </a>
+
+      <a href="capricorn.html" class="zodiac-card" style="--delay:0.5s">
+        <div class="zodiac-card__element-tag earth">Earth</div>
+        <div class="zodiac-card__symbol">♑&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Capricorn</h3>
+        <p class="zodiac-card__dates">Dec 22 – Jan 19</p>
+        <p class="zodiac-card__trait">Disciplined · Ambitious · Wise</p>
+        <div class="zodiac-card__planet">♄ Saturn</div>
+      </a>
+
+      <a href="aquarius.html" class="zodiac-card" style="--delay:0.55s">
+        <div class="zodiac-card__element-tag air">Air</div>
+        <div class="zodiac-card__symbol">♒&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Aquarius</h3>
+        <p class="zodiac-card__dates">Jan 20 – Feb 18</p>
+        <p class="zodiac-card__trait">Visionary · Independent · Humane</p>
+        <div class="zodiac-card__planet">♅ Uranus</div>
+      </a>
+
+      <a href="pisces.html" class="zodiac-card" style="--delay:0.6s">
+        <div class="zodiac-card__element-tag water">Water</div>
+        <div class="zodiac-card__symbol">♓&#xFE0E;</div>
+        <h3 class="zodiac-card__name">Pisces</h3>
+        <p class="zodiac-card__dates">Feb 19 – Mar 20</p>
+        <p class="zodiac-card__trait">Empathetic · Dreamy · Spiritual</p>
+        <div class="zodiac-card__planet">♆ Neptune</div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">CELESTIA</span>
+        <p class="footer__tagline">Guided by the stars, grounded in story.</p>
+      </div>
+      <nav class="footer__nav">
+        <h4 class="footer__nav-title">Explore</h4>
+        <a href="#zodiac">Zodiac Signs</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__rule"></span>
+      <p>© 2026 Celestia · All rights reserved · Made with ✦ and starlight</p>
+      <span class="footer__rule"></span>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.querySelector('.navbar__links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active');
+    });
+
+    // Scroll-triggered card reveal
+    const cards    = document.querySelectorAll('.zodiac-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
