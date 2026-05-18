@@ -52,7 +52,7 @@ body {
   line-height: 1.7;
   color: var(--burgundy);
   background-color: var(--ivory);
-  background-image: url('image1.jpeg');
+  background-image: url('/static/main/img/image1.jpeg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

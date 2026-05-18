@@ -1,20 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Celestia — Your Astrology Guide</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
 </head>
 <body>
 
   <header class="navbar">
-    <a href="index.html" class="navbar__logo">
+    <a href="/" class="navbar__logo">
       <span class="navbar__logo-text">CELESTIA</span>
     </a>
     <nav class="navbar__links">
-      <a href="#zodiac" class="navbar__link">Horoscope</a>
-      <a href="contact.html" class="navbar__link">Contact</a>
+      <a href="/#zodiac" class="navbar__link">Horoscope</a>
+      <a href="/contact/" class="navbar__link">Contact</a>
     </nav>
     <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -43,7 +44,7 @@
         and cosmic stories woven into each of the twelve zodiac signs — and
         uncover what the heavens may hold for you.
       </p>
-      <a href="#zodiac" class="hero__cta">Explore the Zodiac</a>
+      <a href="/#zodiac" class="hero__cta">Explore the Zodiac</a>
     </div>
     <div class="hero__scroll-hint">
       <span>scroll</span>
@@ -64,7 +65,7 @@
 
     <div class="zodiac__grid">
 
-      <a href="aries.html" class="zodiac-card" style="--delay:0.05s">
+      <a href="/aries/" class="zodiac-card" style="--delay:0.05s">
         <div class="zodiac-card__element-tag fire">Fire</div>
         <div class="zodiac-card__symbol">♈&#xFE0E;</div>
         <h3 class="zodiac-card__name">Aries</h3>
@@ -73,7 +74,7 @@
         <div class="zodiac-card__planet">♂ Mars</div>
       </a>
 
-      <a href="taurus.html" class="zodiac-card" style="--delay:0.1s">
+      <a href="/taurus/" class="zodiac-card" style="--delay:0.1s">
         <div class="zodiac-card__element-tag earth">Earth</div>
         <div class="zodiac-card__symbol">♉&#xFE0E;</div>
         <h3 class="zodiac-card__name">Taurus</h3>
@@ -82,7 +83,7 @@
         <div class="zodiac-card__planet">♀ Venus</div>
       </a>
 
-      <a href="gemini.html" class="zodiac-card" style="--delay:0.15s">
+      <a href="/gemini/" class="zodiac-card" style="--delay:0.15s">
         <div class="zodiac-card__element-tag air">Air</div>
         <div class="zodiac-card__symbol">♊&#xFE0E;</div>
         <h3 class="zodiac-card__name">Gemini</h3>
@@ -91,7 +92,7 @@
         <div class="zodiac-card__planet">☿ Mercury</div>
       </a>
 
-      <a href="cancer.html" class="zodiac-card" style="--delay:0.2s">
+      <a href="/cancer/" class="zodiac-card" style="--delay:0.2s">
         <div class="zodiac-card__element-tag water">Water</div>
         <div class="zodiac-card__symbol">♋&#xFE0E;</div>
         <h3 class="zodiac-card__name">Cancer</h3>
@@ -100,7 +101,7 @@
         <div class="zodiac-card__planet">☽ Moon</div>
       </a>
 
-      <a href="leo.html" class="zodiac-card" style="--delay:0.25s">
+      <a href="/leo/" class="zodiac-card" style="--delay:0.25s">
         <div class="zodiac-card__element-tag fire">Fire</div>
         <div class="zodiac-card__symbol">♌&#xFE0E;</div>
         <h3 class="zodiac-card__name">Leo</h3>
@@ -109,7 +110,7 @@
         <div class="zodiac-card__planet">☉ Sun</div>
       </a>
 
-      <a href="virgo.html" class="zodiac-card" style="--delay:0.3s">
+      <a href="/virgo/" class="zodiac-card" style="--delay:0.3s">
         <div class="zodiac-card__element-tag earth">Earth</div>
         <div class="zodiac-card__symbol">♍&#xFE0E;</div>
         <h3 class="zodiac-card__name">Virgo</h3>
@@ -118,7 +119,7 @@
         <div class="zodiac-card__planet">☿ Mercury</div>
       </a>
 
-      <a href="libra.html" class="zodiac-card" style="--delay:0.35s">
+      <a href="/libra/" class="zodiac-card" style="--delay:0.35s">
         <div class="zodiac-card__element-tag air">Air</div>
         <div class="zodiac-card__symbol">♎&#xFE0E;</div>
         <h3 class="zodiac-card__name">Libra</h3>
@@ -127,7 +128,7 @@
         <div class="zodiac-card__planet">♀ Venus</div>
       </a>
 
-      <a href="scorpio.html" class="zodiac-card" style="--delay:0.4s">
+      <a href="/scorpio/" class="zodiac-card" style="--delay:0.4s">
         <div class="zodiac-card__element-tag water">Water</div>
         <div class="zodiac-card__symbol">♏&#xFE0E;</div>
         <h3 class="zodiac-card__name">Scorpio</h3>
@@ -136,7 +137,7 @@
         <div class="zodiac-card__planet">♇ Pluto</div>
       </a>
 
-      <a href="sagittarius.html" class="zodiac-card" style="--delay:0.45s">
+      <a href="/sagittarius/" class="zodiac-card" style="--delay:0.45s">
         <div class="zodiac-card__element-tag fire">Fire</div>
         <div class="zodiac-card__symbol">♐&#xFE0E;</div>
         <h3 class="zodiac-card__name">Sagittarius</h3>
@@ -145,7 +146,7 @@
         <div class="zodiac-card__planet">♃ Jupiter</div>
       </a>
 
-      <a href="capricorn.html" class="zodiac-card" style="--delay:0.5s">
+      <a href="/capricorn/" class="zodiac-card" style="--delay:0.5s">
         <div class="zodiac-card__element-tag earth">Earth</div>
         <div class="zodiac-card__symbol">♑&#xFE0E;</div>
         <h3 class="zodiac-card__name">Capricorn</h3>
@@ -154,7 +155,7 @@
         <div class="zodiac-card__planet">♄ Saturn</div>
       </a>
 
-      <a href="aquarius.html" class="zodiac-card" style="--delay:0.55s">
+      <a href="/aquarius/" class="zodiac-card" style="--delay:0.55s">
         <div class="zodiac-card__element-tag air">Air</div>
         <div class="zodiac-card__symbol">♒&#xFE0E;</div>
         <h3 class="zodiac-card__name">Aquarius</h3>
@@ -163,7 +164,7 @@
         <div class="zodiac-card__planet">♅ Uranus</div>
       </a>
 
-      <a href="pisces.html" class="zodiac-card" style="--delay:0.6s">
+      <a href="/pisces/" class="zodiac-card" style="--delay:0.6s">
         <div class="zodiac-card__element-tag water">Water</div>
         <div class="zodiac-card__symbol">♓&#xFE0E;</div>
         <h3 class="zodiac-card__name">Pisces</h3>
@@ -183,8 +184,8 @@
       </div>
       <nav class="footer__nav">
         <h4 class="footer__nav-title">Explore</h4>
-        <a href="#zodiac">Zodiac Signs</a>
-        <a href="contact.html">Contact</a>
+        <a href="/#zodiac">Zodiac Signs</a>
+        <a href="/contact/">Contact</a>
       </nav>
     </div>
     <div class="footer__bottom">

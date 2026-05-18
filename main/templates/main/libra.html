@@ -1,20 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Celestia — Virgo</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Celestia — Libra</title>
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
 </head>
 <body>
 
   <header class="navbar">
-    <a href="index.html" class="navbar__logo">
+    <a href="/" class="navbar__logo">
       <span class="navbar__logo-text">CELESTIA</span>
     </a>
     <nav class="navbar__links">
-      <a href="index.html#zodiac" class="navbar__link">Horoscope</a>
-      <a href="contact.html" class="navbar__link">Contact</a>
+      <a href="/#zodiac" class="navbar__link">Horoscope</a>
+      <a href="/contact/" class="navbar__link">Contact</a>
     </nav>
   </header>
 
@@ -22,13 +23,13 @@
   <section class="fortune-hero">
 
     <header class="fortune-header">
-      <div class="fortune-header__symbol">♍&#xFE0E;</div>
+      <div class="fortune-header__symbol">♎&#xFE0E;</div>
       <div class="fortune-header__title-row">
         <span class="fortune-header__star">✦</span>
-        <h1 class="fortune-header__title">VIRGO</h1>
+        <h1 class="fortune-header__title">LIBRA</h1>
         <span class="fortune-header__star">✦</span>
       </div>
-      <p class="fortune-header__dates">August 23 – September 22</p>
+      <p class="fortune-header__dates">September 23 – October 22</p>
       <div class="fortune-header__divider">
         <span class="fortune-header__divider-line"></span>
         <span class="fortune-header__divider-dot"></span>
@@ -37,15 +38,16 @@
     </header>
 
     <div class="fortune-desc">
-      <p class="fortune-desc__trait">Precise · Diligent · Discerning</p>
+      <p class="fortune-desc__trait">Graceful · Just · Charming</p>
       <p class="fortune-desc__text">
-        Sharp-eyed and thoughtful, Virgo excels at finding order in chaos. Their dedication to craft and care for others makes them invaluable in any situation.
+        Libra seeks harmony in all things — relationships, aesthetics, and truth.
+        A natural diplomat with a refined eye for beauty and an unshakeable sense of fairness.
       </p>
-      <p class="fortune-desc__planet">☿ Mercury</p>
+      <p class="fortune-desc__planet">♀ Venus</p>
     </div>
 
     <div class="fortune-hero__scroll-hint">
-      <span>today's reading</span>
+      <span>weekly reading</span>
       <span class="fortune-hero__scroll-line"></span>
     </div>
 
@@ -53,24 +55,25 @@
 
   <!-- ── Section 2: 圖表 + 心情小語 ───────────────────── -->
   <div class="fortune-dashboard-section">
-    <div class="fortune-section-label">Today's Reading</div>
+    <div class="fortune-section-label">Weekly Reading</div>
 
     <div class="fortune-dashboard">
 
       <!-- 左：matplotlib 圖表 -->
       <section class="panel panel--chart">
-        <h2 class="panel__label">TODAY'S ENERGY OVERVIEW</h2>
+        <h2 class="panel__label">WEEKLY ENERGY OVERVIEW</h2>
         <div class="chart-img-wrapper">
-          <img src="virgo.png" alt="Today's energy chart" />
+          <img src="/media/libra.png" alt="Weekly energy chart" />
         </div>
       </section>
 
       <!-- 右：心情小語（python 改文字） -->
       <section class="panel panel--quote">
-        <h2 class="panel__label">TODAY'S MOOD QUOTE</h2>
+        <h2 class="panel__label">WEEKLY MOOD QUOTE</h2>
         <div class="quote-mark">&ldquo;</div>
         <p class="quote-text">
-          <!-- 由 Python LLM 自動更新 -->
+          Balance is not about holding everything in place,
+          but knowing what deserves your energy today.
         </p>
         <div class="quote-footer">
           <div class="quote-mark" style="transform:rotate(180deg);">&rdquo;</div>
@@ -90,8 +93,8 @@
       </div>
       <nav class="footer__nav">
         <h4 class="footer__nav-title">Explore</h4>
-        <a href="index.html#zodiac">All Signs</a>
-        <a href="contact.html">Contact</a>
+        <a href="/">All Signs</a>
+        <a href="/contact/">Contact</a>
       </nav>
     </div>
     <div class="footer__bottom">

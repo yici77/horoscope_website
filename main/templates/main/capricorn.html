@@ -1,20 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Celestia — Capricorn</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
 </head>
 <body>
 
   <header class="navbar">
-    <a href="index.html" class="navbar__logo">
+    <a href="/" class="navbar__logo">
       <span class="navbar__logo-text">CELESTIA</span>
     </a>
     <nav class="navbar__links">
-      <a href="index.html#zodiac" class="navbar__link">Horoscope</a>
-      <a href="contact.html" class="navbar__link">Contact</a>
+      <a href="/#zodiac" class="navbar__link">Horoscope</a>
+      <a href="/contact/" class="navbar__link">Contact</a>
     </nav>
   </header>
 
@@ -45,7 +46,7 @@
     </div>
 
     <div class="fortune-hero__scroll-hint">
-      <span>today's reading</span>
+      <span>weekly reading</span>
       <span class="fortune-hero__scroll-line"></span>
     </div>
 
@@ -53,21 +54,21 @@
 
   <!-- ── Section 2: 圖表 + 心情小語 ───────────────────── -->
   <div class="fortune-dashboard-section">
-    <div class="fortune-section-label">Today's Reading</div>
+    <div class="fortune-section-label">Weekly Reading</div>
 
     <div class="fortune-dashboard">
 
       <!-- 左：matplotlib 圖表 -->
       <section class="panel panel--chart">
-        <h2 class="panel__label">TODAY'S ENERGY OVERVIEW</h2>
+        <h2 class="panel__label">WEEKLY ENERGY OVERVIEW</h2>
         <div class="chart-img-wrapper">
-          <img src="capricorn.png" alt="Today's energy chart" />
+          <img src="/media/capricorn.png" alt="Weekly energy chart" />
         </div>
       </section>
 
       <!-- 右：心情小語（python 改文字） -->
       <section class="panel panel--quote">
-        <h2 class="panel__label">TODAY'S MOOD QUOTE</h2>
+        <h2 class="panel__label">WEEKLY MOOD QUOTE</h2>
         <div class="quote-mark">&ldquo;</div>
         <p class="quote-text">
           <!-- 由 Python LLM 自動更新 -->
@@ -90,8 +91,8 @@
       </div>
       <nav class="footer__nav">
         <h4 class="footer__nav-title">Explore</h4>
-        <a href="index.html#zodiac">All Signs</a>
-        <a href="contact.html">Contact</a>
+        <a href="/">All Signs</a>
+        <a href="/contact/">Contact</a>
       </nav>
     </div>
     <div class="footer__bottom">

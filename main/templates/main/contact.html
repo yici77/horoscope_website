@@ -1,20 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Celestia — Contact</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
 </head>
 <body>
 
   <header class="navbar">
-    <a href="index.html" class="navbar__logo">
+    <a href="/" class="navbar__logo">
       <span class="navbar__logo-text">CELESTIA</span>
     </a>
     <nav class="navbar__links">
-      <a href="index.html#zodiac" class="navbar__link">Horoscope</a>
-      <a href="contact.html" class="navbar__link active">Contact</a>
+      <a href="/#zodiac" class="navbar__link">Horoscope</a>
+      <a href="/contact/" class="navbar__link active">Contact</a>
     </nav>
     <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -34,7 +35,14 @@
 
       <p>Whether seeking celestial guidance or sharing feedback,<br>leave your message beneath the stars.</p>
 
-      <form id="astrology-form">
+      {% if sent %}
+        <p style="color: var(--burgundy); text-align: center; font-style: italic;">
+          ✦ Message sent successfully ✦
+        </p>
+      {% endif %}
+
+      <form method="POST" action="/contact/">
+        {% csrf_token %}
         <div class="form-group">
           <label for="name">Your Name</label>
           <input type="text" id="name" name="name" placeholder="e.g., Orion Traveler" required>
@@ -83,8 +91,8 @@
       </div>
       <nav class="footer__nav">
         <h4 class="footer__nav-title">Explore</h4>
-        <a href="#zodiac">Zodiac Signs</a>
-        <a href="contact.html">Contact</a>
+        <a href="/#zodiac">Zodiac Signs</a>
+        <a href="/contact/">Contact</a>
       </nav>
     </div>
     <div class="footer__bottom">
