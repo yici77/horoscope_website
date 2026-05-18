@@ -15,6 +15,7 @@
   --blush:       #E7D6CC;
   --ivory:       #FFF9F0;
   --gold:        #C9A96E;
+  --gold-dark:   #907a52;
 
   /* Derived */
   --ink-muted:     #7A5553;
@@ -665,7 +666,7 @@ body::before {
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
 }
 
 /* Dashboard section — chart + quote */
