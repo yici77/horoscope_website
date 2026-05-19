@@ -2,8 +2,8 @@ name: Weekly Horoscope Update
 
 on:
   schedule:
-    - cron: '0 9 * * 1'  # monday morning at 9:00 AM UTC
-  workflow_dispatch:       # allow manual trigger
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
 
 jobs:
   update:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
@@ -32,6 +32,16 @@ jobs:
           git add .
           git commit -m "weekly update $(date +'%Y-%m-%d')" || echo "No changes"
           git push origin main
+
+      - name: Pull latest code on PythonAnywhere
+        run: |
+          curl -X POST \
+            -H "Authorization: Token ${{ secrets.PA_API_TOKEN }}" \
+            -d "command=cd /home/yici77/horoscope_website && git pull origin main" \
+            https://www.pythonanywhere.com/api/v0/user/yici77/consoles/
+
+      - name: Wait for pull to finish
+        run: sleep 15
 
       - name: Reload PythonAnywhere
         run: |
