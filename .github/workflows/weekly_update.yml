@@ -34,14 +34,14 @@ jobs:
           git push origin main
 
       - name: Pull latest code on PythonAnywhere
-        run: |
-          curl -X POST \
-            -H "Authorization: Token ${{ secrets.PA_API_TOKEN }}" \
-            -d "command=cd /home/yici77/horoscope_website && git pull origin main" \
-            https://www.pythonanywhere.com/api/v0/user/yici77/consoles/
-
-      - name: Wait for pull to finish
-        run: sleep 15
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ssh.pythonanywhere.com
+          username: yici77
+          key: ${{ secrets.PA_SSH_KEY }}
+          script: |
+            cd /home/yici77/horoscope_website
+            git pull origin main
 
       - name: Reload PythonAnywhere
         run: |
