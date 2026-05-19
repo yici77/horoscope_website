@@ -1,11 +1,21 @@
+import os
 from django.shortcuts import render, redirect
+from django.conf import settings
 from .models import ContactMessage
 
 def index(request):
     return render(request, 'main/index.html')
 
 def fortune(request, sign):
-    return render(request, f'main/{sign}.html')
+    # Read mood quote from txt file
+    quote_path = os.path.join(settings.BASE_DIR, 'scraper', 'quotes', f'{sign}_quote.txt')
+    try:
+        with open(quote_path, 'r', encoding='utf-8') as f:
+            quote = f.read().strip()
+    except FileNotFoundError:
+        quote = ''
+
+    return render(request, f'main/{sign}.html', {'quote': quote})
 
 def contact(request):
     if request.method == 'POST':
@@ -19,3 +29,6 @@ def contact(request):
 
     sent = request.GET.get('sent')
     return render(request, 'main/contact.html', {'sent': sent})
+
+def imprint(request):
+    return render(request, 'main/imprint.html')
