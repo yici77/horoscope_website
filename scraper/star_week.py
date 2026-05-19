@@ -42,11 +42,11 @@ class scrapying_week:
             print(f"ptt:{e}")
             
         links = []
-        for title in titles:
-            if re.search(f"{self.pattern1}|{self.pattern2}", title.text):
-                links.append("https://www.ptt.cc"+title.find("a").get("href"))
-        if links:
-            try:
+        try:
+            for title in titles:
+                if re.search(f"{self.pattern1}|{self.pattern2}", title.text):
+                    links.append("https://www.ptt.cc"+title.find("a").get("href"))
+            if links:
                 for link in links:
                     resp = requests.get(link, headers = headers)
                     soup = BeautifulSoup(resp.text, "html.parser")
@@ -54,8 +54,8 @@ class scrapying_week:
                     article = article.split(re.findall(r"--[^-]+--\n※ 發信站|--\n※ 發信站",article,flags=re.DOTALL)[0])[0]
                     article = re.sub(r"\n+","\n",article)+"：D"
                     self.write(article)
-            except Exception as e:
-                print(f"ptt:{e}")
+        except Exception as e:
+            print(f"ptt:{e}")
 
     def stargogo(self):
         try:
