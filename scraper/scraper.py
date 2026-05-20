@@ -275,6 +275,62 @@ class scrapying_week:
         except Exception as e:
             print(f"eugen:{e}")
 
+
+    def astroyogi(self):
+        try:
+            article_list = []
+            zodiac = ["aries", "taurus", "gemini", "cancer", "leo", "virgo",
+                      "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
+            headers = {"user-agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            }
+            for i in zodiac:
+                url = f"https://www.astroyogi.com/horoscopes/weekly/{i}-free-horoscope.aspx"
+                resp = requests.get(url, headers=headers, verify=False)
+                soup = BeautifulSoup(resp.text, "html.parser")
+                article = soup.find("div", {"id": "sections_div"}).text.split("Remedy – Chant “Om Angarakaya Namah”")[0]
+                article_list.append(i + "\n" + article)
+            article = "\n".join(article_list) + "：D"
+            self.write(article)
+        except Exception as e:
+            print(f"astroyogi:{e}")
+
+
+    def debbiefrank(self):
+        try:
+            url = "https://www.debbiefrank.com/weekly-horoscopes/"
+            headers = {"user-agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            }
+            resp = requests.get(url, headers=headers, verify=False)
+            soup = BeautifulSoup(resp.text, "html.parser")
+            article = soup.text.split("Weekly Horoscopes for:")[1].split("X-twitter")[0]
+            self.write(article)
+        except Exception as e:
+            print(f"debbiefrank:{e}")
+
+    
+    def indastro(self):
+        try:
+            article_list = []
+            zodiac = ["aries", "taurus", "gemini", "cancer", "leo", "virgo",
+                      "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
+            headers = {"user-agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            }
+            for i in zodiac:
+                url = f"https://www.indastro.com/horoscope/weekly-horoscope/{i}.html"
+                resp = requests.get(url, headers=headers, verify=False)
+                soup = BeautifulSoup(resp.text, "html.parser")
+                article = soup.find("div", {"class": "daily-horo text-center"}).text
+                article_list.append(i + "\n" + article)
+            article = "\n".join(article_list) + "：D"
+            self.write(article)
+        except Exception as e:
+            print(f"indastro:{e}")
+
+
+
 def call_week():
     call = scrapying_week()
     call.delete_file()
@@ -290,6 +346,9 @@ def call_week():
     call.reflections()
     call.hub()
     call.eugen()
+    call.astroyogi()
+    call.debbiefrank()
+    call.indastro()
     print("Scraping complete")
 
     # Automatically run pipeline after scraping
