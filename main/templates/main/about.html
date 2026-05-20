@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestia — About</title>
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
+</head>
+<body>
+
+  <header class="navbar" role="banner">
+    <a href="/" class="navbar__logo" aria-label="Celestia home">
+      <span class="navbar__logo-text">CELESTIA</span>
+    </a>
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="/#zodiac" class="navbar__link">Horoscope</a>
+      <a href="/about/" class="navbar__link active" aria-current="page">About</a>
+      <a href="/contact/" class="navbar__link">Contact</a>
+    </nav>
+    <button class="navbar__hamburger" id="hamburger"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="about-hero" aria-labelledby="about-title">
+      <p class="about-hero__eyebrow">The Story Behind</p>
+      <h1 class="about-hero__title" id="about-title">About This Project</h1>
+      <p class="about-hero__subtitle">
+        A data-driven horoscope aggregation website built with Python and Django —
+        where ancient cosmic wisdom meets modern statistical analysis.
+      </p>
+      <div class="about-hero__divider" aria-hidden="true">
+        <span class="about-hero__divider-line"></span>
+        <span class="about-hero__divider-symbol">☽ ✦ ☾</span>
+        <span class="about-hero__divider-line"></span>
+      </div>
+    </section>
+
+    <div class="about-body">
+
+      <!-- Why section -->
+      <section aria-labelledby="why-title">
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <span class="section-header__rule" aria-hidden="true"></span>
+          <h2 class="section-header__title" id="why-title">Why This Exists</h2>
+          <span class="section-header__rule" aria-hidden="true"></span>
+        </div>
+
+        <div class="about-panel">
+          <div class="about-panel__symbol" aria-hidden="true">✦ ☽ ✦</div>
+          <p class="about-panel__text">
+            Horoscope content is one of the most widely consumed forms of
+            entertainment online — yet different websites often offer conflicting
+            predictions for the same zodiac sign in the same week. This raised a
+            question: is there a way to look across multiple sources, find common
+            patterns, and present them as data? This project explores that idea —
+            collecting horoscope articles from various websites, analyzing them with
+            AI, and visualizing the results to reveal where sources agree,
+            where they diverge, and what the numbers actually say.
+          </p>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section aria-labelledby="how-title">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="section-header__rule" aria-hidden="true"></span>
+          <h2 class="section-header__title" id="how-title">How It Works</h2>
+          <span class="section-header__rule" aria-hidden="true"></span>
+        </div>
+
+        <div class="about-steps">
+
+          <div class="about-panel about-panel--step">
+            <div class="about-panel__symbol" aria-hidden="true">01</div>
+            <div class="about-panel__body">
+              <h3 class="about-panel__title">Web Scraping</h3>
+              <p class="about-panel__text">
+                Each week, horoscope articles are silently gathered from multiple
+                astrology websites across the web — aggregating diverse voices
+                into a single constellation of data.
+              </p>
+              <div class="about-panel__tags">
+                <span class="about-panel__tag">Python</span>
+                <span class="about-panel__tag">BeautifulSoup</span>
+                <span class="about-panel__tag">Requests</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-panel about-panel--step">
+            <div class="about-panel__symbol" aria-hidden="true">02</div>
+            <div class="about-panel__body">
+              <h3 class="about-panel__title">AI Analysis</h3>
+              <p class="about-panel__text">
+                Each article is interpreted by an AI language model, which
+                classifies horoscope ratings across five dimensions — Love,
+                Career, Wealth, Health, and Overall — revealing the hidden
+                signals within the prose.
+              </p>
+              <div class="about-panel__tags">
+                <span class="about-panel__tag">Gemini API</span>
+                <span class="about-panel__tag">NLP</span>
+                <span class="about-panel__tag">Classification</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-panel about-panel--step">
+            <div class="about-panel__symbol" aria-hidden="true">03</div>
+            <div class="about-panel__body">
+              <h3 class="about-panel__title">Statistical Analysis</h3>
+              <p class="about-panel__text">
+                Ratings are aggregated and statistically processed to surface
+                patterns — how often a sign is favoured, which dimensions trend
+                positively, and where consensus emerges across sources.
+              </p>
+              <div class="about-panel__tags">
+                <span class="about-panel__tag">Statistics</span>
+                <span class="about-panel__tag">JSON</span>
+                <span class="about-panel__tag">Aggregation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-panel about-panel--step">
+            <div class="about-panel__symbol" aria-hidden="true">04</div>
+            <div class="about-panel__body">
+              <h3 class="about-panel__title">Visualization & Delivery</h3>
+              <p class="about-panel__text">
+                The processed data is rendered into charts and delivered through
+                an interactive website — giving each zodiac sign its own weekly
+                energy portrait, grounded in data rather than divination.
+              </p>
+              <div class="about-panel__tags">
+                <span class="about-panel__tag">Matplotlib</span>
+                <span class="about-panel__tag">Django</span>
+                <span class="about-panel__tag">GitHub Actions</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">CELESTIA</span>
+        <p class="footer__tagline">Guided by the stars, grounded in story.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <h4 class="footer__nav-title">Explore</h4>
+        <a href="/#zodiac">Zodiac Signs</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/imprint/">Imprint</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__rule" aria-hidden="true"></span>
+      <p>© 2026 Celestia · All rights reserved · Made with ✦ and starlight</p>
+      <span class="footer__rule" aria-hidden="true"></span>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.querySelector('.navbar__links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+
+</body>
+</html>

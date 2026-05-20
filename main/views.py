@@ -32,3 +32,6 @@ def contact(request):
 
 def imprint(request):
     return render(request, 'main/imprint.html')
+
+def about(request):
+    return render(request, 'main/about.html')

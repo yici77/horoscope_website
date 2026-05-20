@@ -13,9 +13,10 @@
     <a href="/" class="navbar__logo">
       <span class="navbar__logo-text">CELESTIA</span>
     </a>
-    <nav class="navbar__links">
+    <nav class="navbar__links" aria-label="Main navigation">
       <a href="/#zodiac" class="navbar__link">Horoscope</a>
-      <a href="/contact/" class="navbar__link active">Contact</a>
+      <a href="/about/" class="navbar__link">About</a>
+      <a href="/contact/" class="navbar__link">Contact</a>
     </nav>
     <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -83,22 +84,24 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer__top">
       <div class="footer__brand">
         <span class="footer__logo">CELESTIA</span>
         <p class="footer__tagline">Guided by the stars, grounded in story.</p>
       </div>
-      <nav class="footer__nav">
+      <nav class="footer__nav" aria-label="Footer navigation">
         <h4 class="footer__nav-title">Explore</h4>
         <a href="/#zodiac">Zodiac Signs</a>
+        <a href="/about/">About</a>
         <a href="/contact/">Contact</a>
+        <a href="/imprint/">Imprint</a>
       </nav>
     </div>
     <div class="footer__bottom">
-      <span class="footer__rule"></span>
+      <span class="footer__rule" aria-hidden="true"></span>
       <p>© 2026 Celestia · All rights reserved · Made with ✦ and starlight</p>
-      <span class="footer__rule"></span>
+      <span class="footer__rule" aria-hidden="true"></span>
     </div>
   </footer>
 

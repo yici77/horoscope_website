@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestia — Imprint</title>
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
+</head>
+<body>
+
+  <header class="navbar" role="banner">
+    <a href="/" class="navbar__logo" aria-label="Celestia home">
+      <span class="navbar__logo-text">CELESTIA</span>
+    </a>
+    <nav class="navbar__links" aria-label="Main navigation">
+      <a href="/#zodiac" class="navbar__link">Horoscope</a>
+      <a href="/about/" class="navbar__link">About</a>
+      <a href="/contact/" class="navbar__link">Contact</a>
+    </nav>
+    <button class="navbar__hamburger" id="hamburger"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="contact-section" aria-labelledby="imprint-title">
+      <div class="contact-container">
+
+        <h1 id="imprint-title" style="font-family: var(--font-display); text-align: center; color: var(--burgundy); font-size: 1.6rem; font-weight: 400; letter-spacing: 0.12em; margin-bottom: 0.5rem;">
+          Imprint
+        </h1>
+
+        <div class="contact-divider" aria-hidden="true">
+          <span class="contact-divider-line"></span>
+          <span class="contact-divider-symbol">☽ ✦ ☾</span>
+          <span class="contact-divider-line"></span>
+        </div>
+
+        <div style="text-align: left; line-height: 2; color: var(--burgundy);">
+
+          <h2 style="font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; margin-top: 1.2rem;">
+            Website Owner
+          </h2>
+          <p style="font-family: var(--font-body); font-size: 0.98rem; color: var(--ink-muted); margin-bottom: 0;">
+            Celestia Astrology
+          </p>
+          <p style="font-family: var(--font-body); font-size: 0.98rem; color: var(--ink-muted);">
+            Created as an academic web design project
+          </p>
+
+          <h2 style="font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; margin-top: 1.4rem;">
+            Contact
+          </h2>
+          <p style="font-family: var(--font-body); font-size: 0.98rem; color: var(--ink-muted);">
+            For enquiries, please use the
+            <a href="/contact/" style="color: var(--burgundy); text-decoration: underline; text-underline-offset: 3px;">
+              contact form
+            </a>.
+          </p>
+
+          <h2 style="font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; margin-top: 1.4rem;">
+            Disclaimer
+          </h2>
+          <p style="font-family: var(--font-body); font-size: 0.98rem; color: var(--ink-muted);">
+            All horoscope content on this website is for entertainment purposes only
+            and does not constitute professional advice of any kind.
+          </p>
+
+          <h2 style="font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; margin-top: 1.4rem;">
+            Copyright
+          </h2>
+          <p style="font-family: var(--font-body); font-size: 0.98rem; color: var(--ink-muted); margin-bottom: 0;">
+            © 2026 Celestia · All rights reserved.
+          </p>
+          <p style="font-family: var(--font-body); font-size: 0.98rem; color: var(--ink-muted); margin-bottom: 0;">
+            Background imagery created with AI tools for educational use.
+          </p>
+          <p style="font-family: var(--font-body); font-size: 0.98rem; color: var(--ink-muted);">
+            Astrological data sourced and processed for non-commercial academic purposes.
+          </p>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="footer__logo">CELESTIA</span>
+        <p class="footer__tagline">Guided by the stars, grounded in story.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <h4 class="footer__nav-title">Explore</h4>
+        <a href="/#zodiac">Zodiac Signs</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/imprint/">Imprint</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__rule" aria-hidden="true"></span>
+      <p>© 2026 Celestia · All rights reserved · Made with ✦ and starlight</p>
+      <span class="footer__rule" aria-hidden="true"></span>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.querySelector('.navbar__links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+  </script>
+
+</body>
+</html>
