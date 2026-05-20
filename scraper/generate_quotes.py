@@ -46,9 +46,10 @@ def generate_quote(sign_en, article_text):
     write a single poetic and inspiring mood quote in English.
     
     Requirements:
-    - 1 to 2 sentences only
-    - Mystical, elegant and uplifting tone
-    - Relevant to the week's energy described in the article
+    - 2 to 3 sentences
+    - Warm, grounded, and encouraging tone
+    - Avoid overly poetic or abstract language — keep it clear and relatable
+    - Relevant to the key themes or energy described in the article
     - No quotation marks
     - Return only the quote, nothing else
     

@@ -209,17 +209,87 @@ class scrapying_week:
             print(f"california:{e}")
 
 
+    def astrostyle(self):
+        try:
+            article_list = []
+            zodiac = ["aries", "taurus", "gemini", "cancer", "leo", "virgo",
+                      "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
+            headers = {"user-agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            }
+            for i in zodiac:
+                url = f"https://astrostyle.com/horoscopes/weekly/{i}/"
+                resp = requests.get(url, headers=headers, verify=False)
+                soup = BeautifulSoup(resp.text, "html.parser")
+                article = soup.find("article", {"class": "horoscope-content"}).text.split("Read another sign’s weekly")[0]
+                article_list.append(i + "\n" + article)
+            article = "\n".join(article_list) + "：D"
+            self.write(article)
+        except Exception as e:
+            print(f"astrostyle:{e}")
+
+
+    def reflections(self):
+        try:
+            url = "https://www.astralreflections.com/"
+            headers = {"user-agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            }
+            resp = requests.get(url, headers=headers, verify=False)
+            soup = BeautifulSoup(resp.text, "html.parser")
+            article = soup.find("div", {"class": "entry-content"}).text.split("WEEKLY FORECAST:")[1].split("AFTERAMBLE:")[0] + "：D"
+            self.write(article)
+        except Exception as e:
+            print(f"reflections:{e}")
+
+
+    def hub(self):
+        try:
+            article_list = []
+            zodiac = ["aries", "taurus", "gemini", "cancer", "leo", "virgo",
+                      "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
+            headers = {"user-agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            }
+            for i in zodiac:
+                url = f"https://astrologyhub.com/horoscope/{i}-horoscope/#weekly-horoscope"
+                resp = requests.get(url, headers=headers, verify=False)
+                soup = BeautifulSoup(resp.text, "html.parser")
+                article = soup.find("div", {"class": "fl-post-slider-content"}).text
+                article_list.append(i + "\n" + article)
+            article = "\n".join(article_list) + "：D"
+            self.write(article)
+        except Exception as e:
+            print(f"hub:{e}")
+
+    def eugen(self):
+        try:
+            url = "https://www.eugenialast.com/astro-weekly/"
+            headers = {"user-agent":
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+            }
+            resp = requests.get(url, headers=headers, verify=False)
+            soup = BeautifulSoup(resp.text, "html.parser")
+            article = soup.find("article").text
+            self.write(article)
+        except Exception as e:
+            print(f"eugen:{e}")
+
 def call_week():
     call = scrapying_week()
     call.delete_file()
     call.ptt()
-    # call.elle()
+    #call.elle()
     call.techpurple()
     call.horoscope_us()
     call.astro()
     call.georgian()
     call.ganeshaspeaks()
     call.california()
+    call.astrostyle()
+    call.reflections()
+    call.hub()
+    call.eugen()
     print("Scraping complete")
 
     # Automatically run pipeline after scraping
