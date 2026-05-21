@@ -9,80 +9,93 @@
 </head>
 <body>
 
-  <header class="navbar">
-    <a href="/" class="navbar__logo">
+  <header class="navbar" role="banner">
+    <a href="/" class="navbar__logo" aria-label="Celestia home">
       <span class="navbar__logo-text">CELESTIA</span>
     </a>
     <nav class="navbar__links" aria-label="Main navigation">
       <a href="/#zodiac" class="navbar__link">Horoscope</a>
       <a href="/about/" class="navbar__link">About</a>
-      <a href="/contact/" class="navbar__link">Contact</a>
+      <a href="/contact/" class="navbar__link" aria-current="page">Contact</a>
     </nav>
-    <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
+    <button class="navbar__hamburger" id="hamburger"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="navbar__links">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </button>
   </header>
 
-  <section class="contact-section">
-    <div class="contact-container">
+  <main>
+    <section class="contact-section" aria-labelledby="contact-title">
+      <div class="contact-container">
 
-      <h2>Connect with the Cosmos</h2>
+        <h1 id="contact-title" class="sr-only">Contact</h1>
+        <h2>Connect with the Cosmos</h2>
 
-      <div class="contact-divider">
-        <span class="contact-divider-line"></span>
-        <span class="contact-divider-symbol">☽ ✦ ☾</span>
-        <span class="contact-divider-line"></span>
+        <div class="contact-divider" aria-hidden="true">
+          <span class="contact-divider-line"></span>
+          <span class="contact-divider-symbol">☽ ✦ ☾</span>
+          <span class="contact-divider-line"></span>
+        </div>
+
+        <p>Whether seeking celestial guidance or sharing feedback,<br>leave your message beneath the stars.</p>
+
+        {% if sent %}
+          <p role="status" style="color: var(--burgundy); text-align: center; font-style: italic;">
+            ✦ Message sent successfully ✦
+          </p>
+        {% endif %}
+
+        <form method="POST" action="/contact/" aria-label="Contact form">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name"
+                   placeholder="e.g., Orion Traveler"
+                   autocomplete="name" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email"
+                   placeholder="stars@example.com"
+                   autocomplete="email" required aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="zodiac">Zodiac Sign</label>
+            <select id="zodiac" name="zodiac">
+              <option value="aries">Aries</option>
+              <option value="taurus">Taurus</option>
+              <option value="gemini">Gemini</option>
+              <option value="cancer">Cancer</option>
+              <option value="leo">Leo</option>
+              <option value="virgo">Virgo</option>
+              <option value="libra">Libra</option>
+              <option value="scorpio">Scorpio</option>
+              <option value="sagittarius">Sagittarius</option>
+              <option value="capricorn">Capricorn</option>
+              <option value="aquarius">Aquarius</option>
+              <option value="pisces">Pisces</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5"
+                      placeholder="Write down what the stars whisper to you…"
+                      required aria-required="true"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Cosmic Message</button>
+        </form>
+
       </div>
-
-      <p>Whether seeking celestial guidance or sharing feedback,<br>leave your message beneath the stars.</p>
-
-      {% if sent %}
-        <p style="color: var(--burgundy); text-align: center; font-style: italic;">
-          ✦ Message sent successfully ✦
-        </p>
-      {% endif %}
-
-      <form method="POST" action="/contact/">
-        {% csrf_token %}
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="e.g., Orion Traveler" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="stars@example.com" required>
-        </div>
-
-        <div class="form-group">
-          <label for="zodiac">Zodiac Sign</label>
-          <select id="zodiac" name="zodiac">
-            <option value="aries">Aries</option>
-            <option value="taurus">Taurus</option>
-            <option value="gemini">Gemini</option>
-            <option value="cancer">Cancer</option>
-            <option value="leo">Leo</option>
-            <option value="virgo">Virgo</option>
-            <option value="libra">Libra</option>
-            <option value="scorpio">Scorpio</option>
-            <option value="sagittarius">Sagittarius</option>
-            <option value="capricorn">Capricorn</option>
-            <option value="aquarius">Aquarius</option>
-            <option value="pisces">Pisces</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Your Message</label>
-          <textarea id="message" name="message" rows="5"
-            placeholder="Write down what the stars whisper to you…" required></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">Send Cosmic Message</button>
-      </form>
-
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer" role="contentinfo">
     <div class="footer__top">
@@ -106,8 +119,11 @@
   </footer>
 
   <script>
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.querySelector('.navbar__links').classList.toggle('open');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.querySelector('.navbar__links');
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
     });
   </script>
 

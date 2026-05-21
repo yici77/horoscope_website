@@ -9,8 +9,8 @@
 </head>
 <body>
 
-  <header class="navbar">
-    <a href="/" class="navbar__logo">
+  <header class="navbar" role="banner">
+    <a href="/" class="navbar__logo" aria-label="Celestia home">
       <span class="navbar__logo-text">CELESTIA</span>
     </a>
     <nav class="navbar__links" aria-label="Main navigation">
@@ -20,62 +20,59 @@
     </nav>
   </header>
 
-  <!-- ── Section 1: 星座介紹（全螢幕） ─────────────────── -->
-  <section class="fortune-hero">
+  <main>
+    <section class="fortune-hero" aria-labelledby="sign-title-taurus">
 
-    <header class="fortune-header">
-      <div class="fortune-header__symbol">♉&#xFE0E;</div>
-      <div class="fortune-header__title-row">
-        <span class="fortune-header__star">✦</span>
-        <h1 class="fortune-header__title">TAURUS</h1>
-        <span class="fortune-header__star">✦</span>
-      </div>
-      <p class="fortune-header__dates">April 20 – May 20</p>
-      <div class="fortune-header__divider">
-        <span class="fortune-header__divider-line"></span>
-        <span class="fortune-header__divider-dot"></span>
-        <span class="fortune-header__divider-line"></span>
-      </div>
-    </header>
-
-    <div class="fortune-desc">
-      <p class="fortune-desc__trait">Steadfast · Sensual · Patient</p>
-      <p class="fortune-desc__text">
-        Rooted in the earth, Taurus seeks beauty, comfort, and security. Incredibly loyal and dependable, they bring calm and warmth to everything they touch.
-      </p>
-      <p class="fortune-desc__planet">♀ Venus</p>
-    </div>
-
-  </section>
-
-  <!-- ── Section 2: 圖表 + 心情小語 ───────────────────── -->
-  <div class="fortune-dashboard-section">
-    <div class="fortune-section-label">Weekly Reading</div>
-
-    <div class="fortune-dashboard">
-
-      <!-- 左：matplotlib 圖表 -->
-      <section class="panel panel--chart">
-        <h2 class="panel__label">WEEKLY ENERGY OVERVIEW</h2>
-        <div class="chart-img-wrapper">
-          <img src="/media/taurus.png" alt="Weekly energy chart" />
+      <header class="fortune-header">
+        <div class="fortune-header__symbol" aria-hidden="true">♉&#xFE0E;</div>
+        <div class="fortune-header__title-row">
+          <span class="fortune-header__star" aria-hidden="true">✦</span>
+          <h1 class="fortune-header__title" id="sign-title-taurus">TAURUS</h1>
+          <span class="fortune-header__star" aria-hidden="true">✦</span>
         </div>
-      </section>
-
-      <!-- 右：心情小語（python 改文字） -->
-      <section class="panel panel--quote">
-        <h2 class="panel__label">WEEKLY MOOD QUOTE</h2>
-        <div class="quote-mark">&ldquo;</div>
-        <p class="quote-text">{{ quote }}</p>
-        <div class="quote-footer">
-          <div class="quote-mark" style="transform:rotate(180deg);">&rdquo;</div>
-          <div class="quote-divider"></div>
-          <span class="quote-moon">☽</span>
+        <p class="fortune-header__dates">April 20 – May 20</p>
+        <div class="fortune-header__divider" aria-hidden="true">
+          <span class="fortune-header__divider-line"></span>
+          <span class="fortune-header__divider-dot"></span>
+          <span class="fortune-header__divider-line"></span>
         </div>
-      </section>
+      </header>
 
-    </div>
-  </div>
+      <div class="fortune-desc">
+        <p class="fortune-desc__trait">Steadfast · Sensual · Patient</p>
+        <p class="fortune-desc__text">Rooted in the earth, Taurus seeks beauty, comfort, and security. Incredibly loyal and dependable, they bring calm and warmth to everything they touch.</p>
+        <p class="fortune-desc__planet">♀ Venus</p>
+      </div>
+
+    </section>
+
+    <section class="fortune-dashboard-section" aria-labelledby="reading-label-taurus">
+      <div class="fortune-section-label" id="reading-label-taurus">Weekly Reading</div>
+
+      <div class="fortune-dashboard">
+
+        <section class="panel panel--chart" aria-labelledby="chart-label-taurus">
+          <h2 class="panel__label" id="chart-label-taurus">WEEKLY ENERGY OVERVIEW</h2>
+          <div class="chart-img-wrapper">
+            <img src="/media/taurus.png"
+                 alt="Taurus weekly energy chart showing Love, Career, Wealth, Health and Overall scores" />
+          </div>
+        </section>
+
+        <section class="panel panel--quote" aria-labelledby="quote-label-taurus">
+          <h2 class="panel__label" id="quote-label-taurus">WEEKLY MOOD QUOTE</h2>
+          <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+          <p class="quote-text">{{ quote }}</p>
+          <div class="quote-footer" aria-hidden="true">
+            <div class="quote-mark" style="transform:rotate(180deg);">&rdquo;</div>
+            <div class="quote-divider"></div>
+            <span class="quote-moon">☽</span>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
 
   <footer class="footer" role="contentinfo">
     <div class="footer__top">
